@@ -32,9 +32,11 @@ public class ClimbLadder : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isClimbing=true)
+        if (isClimbing==true)
         {
             rb.gravityScale = 0f;
+            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+
         }
         else
         {
@@ -49,6 +51,7 @@ public class ClimbLadder : MonoBehaviour
             isLadder = true;
             isClimbing = true;
             //播放攀爬动画
+            anim.SetBool("Climbing",true);
         }
     }
 
@@ -59,6 +62,7 @@ public class ClimbLadder : MonoBehaviour
             isLadder = false;
             isClimbing = false;
             //播放Idle动画
+            anim.Play("Idle");
         }
     }
 }
