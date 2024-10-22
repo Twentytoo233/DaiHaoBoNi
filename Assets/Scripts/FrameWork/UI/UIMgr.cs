@@ -164,7 +164,12 @@ public class UIMgr : BaseManager<UIMgr>
                     //传出去使用
                     callback?.Invoke(panel);
                     //存到字典中
-                    panelDic.Add(panelName, panel);
+                    //panelDic.Add(panelName, panel);
+                    //判断是否重复
+                    if (!panelDic.ContainsKey(panelName))
+                        panelDic.Add(panelName, panel);
+                    else
+                        panelDic[panelName] = panel;
                 });
             }
         }
