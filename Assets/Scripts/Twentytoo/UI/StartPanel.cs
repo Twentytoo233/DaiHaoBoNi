@@ -19,8 +19,9 @@ public class StartPanel : BasePanel
     {
         UIMgr.Instance.ShowPanel<StartPanel>();
 
-        
-
+    }
+    private void Update()
+    {
         GetControl<Button>("StartButton").onClick.AddListener(() =>
         {
             //已按下开始按钮 隐藏开始面板
@@ -31,5 +32,23 @@ public class StartPanel : BasePanel
 
         });
 
+        //按下结束游戏按钮 结束游戏
+        GetControl<Button>("EndButton").onClick.AddListener(() =>
+        {
+            //建议有提醒框
+
+            //建议有自动存档
+
+            //关闭程序
+            Application.Quit();
+        });
+
+        //点击游戏存档 弹出游戏存档界面
+        GetControl<Button>("LoadButton").onClick.AddListener(() =>
+        {
+            UIMgr.Instance.HidePanel<StartPanel>();
+            HideMe();
+            UIMgr.Instance.ShowPanel<Start_SLPanel>();
+        });
     }
 }
