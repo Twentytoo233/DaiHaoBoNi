@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class StartPanel : BasePanel
 {
+    
     public override void HideMe()
     {
         gameObject.SetActive(false);
@@ -15,19 +16,24 @@ public class StartPanel : BasePanel
         gameObject.SetActive(true);
     }
 
+
     private void Start()
     {
         UIMgr.Instance.ShowPanel<StartPanel>();
-
+        //AllEvent();
     }
     private void Update()
+    {
+        AllEvent();
+    }
+    private void AllEvent()
     {
         GetControl<Button>("StartButton").onClick.AddListener(() =>
         {
             //已按下开始按钮 隐藏开始面板
             UIMgr.Instance.HidePanel<StartPanel>();
             HideMe();
-            
+
             //打开开机面板
             UIMgr.Instance.ShowPanel<TurnOnPanel>();
 
@@ -47,9 +53,11 @@ public class StartPanel : BasePanel
         //点击游戏存档 弹出游戏存档界面
         GetControl<Button>("LoadButton").onClick.AddListener(() =>
         {
+            UIMgr.Instance.ShowPanel<Start_SLPanel>();
+
             UIMgr.Instance.HidePanel<StartPanel>();
             HideMe();
-            UIMgr.Instance.ShowPanel<Start_SLPanel>();
+            
         });
     }
 }

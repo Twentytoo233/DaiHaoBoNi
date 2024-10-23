@@ -1,15 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Start_SLPanel : BasePanel
+public class RightPanel : BasePanel
 {
-    private CanvasGroup PanelGroup;
     public override void HideMe()
     {
-
         gameObject.SetActive(false);
     }
 
@@ -17,26 +15,30 @@ public class Start_SLPanel : BasePanel
     {
         gameObject.SetActive(true);
     }
+
     protected override void Awake()
     {
         base.Awake();
         AllEvent();
     }
 
-    private void Start()
+    private void AllEvent()
+    {
+        GetControl<Button>("Button").onClick.AddListener(() =>
+        {
+            Debug.Log("点击");
+        });
+    }
+
+    // Start is called before the first frame update
+    void Start()
     {
         
     }
 
-    /// <summary>
-    /// 添加控件监听事件
-    /// </summary>
-    private void AllEvent()
+    // Update is called once per frame
+    void Update()
     {
-        GetControl<Button>("SLButton").onClick.AddListener(() =>
-        {
-            Debug.Log("选中");
-            UIMgr.Instance.ShowPanel<RightPanel>();
-        });
+        
     }
 }
