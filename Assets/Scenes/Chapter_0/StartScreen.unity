@@ -492,6 +492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start_SLPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3023840751974163367, guid: 09b7f6df3a3d25f4db6404f415f5aae5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8641622876271085836, guid: 09b7f6df3a3d25f4db6404f415f5aae5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -671,7 +675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8343274067510084826, guid: 7b1affda0dd1b2c45a940fbd579ae933, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
