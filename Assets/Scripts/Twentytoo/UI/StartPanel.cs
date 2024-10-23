@@ -27,6 +27,7 @@ public class StartPanel : BasePanel
             //已按下开始按钮 隐藏开始面板
             UIMgr.Instance.HidePanel<StartPanel>();
             HideMe();
+            
             //打开开机面板
             UIMgr.Instance.ShowPanel<TurnOnPanel>();
 
