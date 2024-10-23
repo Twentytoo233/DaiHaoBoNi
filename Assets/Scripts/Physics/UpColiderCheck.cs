@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-public class UpColliderGroupCheck : MonoBehaviour
+public class UpColliderCheck : MonoBehaviour
 {
     private Vector2 boxSize;
     private float offset;
@@ -24,9 +24,9 @@ public class UpColliderGroupCheck : MonoBehaviour
             {
                 previousGroupList.Add(item);
                 //µÝ¹é×ÓÎïÌå
-                if (item.gameObject.GetComponent<UpColliderGroupCheck>())
+                if (item.gameObject.GetComponent<UpColliderCheck>())
                 {
-                    item.gameObject.GetComponent<UpColliderGroupCheck>().GetUpColliderGroup(ref previousGroupList);
+                    item.gameObject.GetComponent<UpColliderCheck>().GetUpColliderGroup(ref previousGroupList);
                 }
             }
         }

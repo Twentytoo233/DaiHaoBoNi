@@ -27,9 +27,9 @@ public class SeesawPanel : MonoBehaviour
             {
                 upColliderGroup.Add(item);
                 //µÝ¹é×ÓÎïÌå
-                if (item.gameObject.GetComponent<UpColliderGroupCheck>())
+                if (item.gameObject.GetComponent<UpColliderCheck>())
                 {
-                    item.gameObject.GetComponent<UpColliderGroupCheck>().GetUpColliderGroup(ref upColliderGroup);
+                    item.gameObject.GetComponent<UpColliderCheck>().GetUpColliderGroup(ref upColliderGroup);
                 }
             }
         }
