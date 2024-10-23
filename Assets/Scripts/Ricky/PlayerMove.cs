@@ -38,6 +38,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private bool getDaze;
     private bool rightDir;
+
+    private enum playerStates { Idle,Run,Jump,Fall};
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -50,52 +54,24 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        MoveH = Input.GetAxis("Horizontal") * MoveSpeed;
         if (isGrounded)
-        {
-            MoveH = Input.GetAxis("Horizontal") * MoveSpeed;
-            rightDir = MoveH >= 0 ? true : false;
-            //if (MoveH == 0)
-            //{
-            //    //播放动画
-            //    anim.Play("Idle");
-            //}
-            //else if (MoveH != 0 && anim.name != "Walk")
-            //{
-            //    //播放动画
-            //    anim.SetTrigger("Walk");
-            //}
+        {    
+           
+            HandleMovementOnGround();
         }
         else
         {
-            if (rightDir)
-                MoveH = Mathf.Max(Input.GetAxis("Horizontal") * MoveSpeed * 1.4f, -0.7f * MoveSpeed);
-            else
-                MoveH = Mathf.Min(Input.GetAxis("Horizontal") * MoveSpeed * 1.4f, 0.7f * MoveSpeed);
+            
+            HandleMovementInAir();
         }
 
-        if (Mathf.Abs(MoveH) > 0.5f)
-            anim.SetBool("isRun", true);
-        else
-            anim.SetBool("isRun", false);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true && !anim.GetCurrentAnimatorStateInfo(0).IsName("fall"))
-        {
-            OnJump();
-            canDoubleJump = true;
-
-            //rb.velocity = Vector2.up * jumpForce;
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump)
-        {
-            //OnDoubleJump();
-            OnJump();
-            canDoubleJump = false;
-        }
+        HandleJumping();
 
         rb.velocity = new Vector2(MoveH, rb.velocity.y);
-        //Debug.Log(MoveH);
         Flip();
         CheckGround();
+
         if (getDaze)
         {
             if (rb.gravityScale > 0)
@@ -104,20 +80,71 @@ public class PlayerMove : MonoBehaviour
             }
             GetDaze();
         }
+
+        playerAnim();
+       
     }
-    private void CheckGround()
+
+    private void HandleMovementOnGround()
     {
-        Collider2D collider = Physics2D.OverlapBox(checkPoint.position, checkBoxSize, 0,layerMask);
-        if (collider != null)
+        rightDir = MoveH >= 0 ? true : false;
+
+        if (Mathf.Abs(MoveH) > 0.5f)
+           anim.SetBool("isRun", true);
+        else
+            anim.SetBool("isRun", false);
+    }
+
+    private void HandleMovementInAir()
+    {
+        if (rightDir)
+            MoveH = Mathf.Max(Input.GetAxis("Horizontal") * MoveSpeed * 1.4f, -0.7f * MoveSpeed);
+        else
+            MoveH = Mathf.Min(Input.GetAxis("Horizontal") * MoveSpeed * 1.4f, 0.7f * MoveSpeed);
+    }
+
+    private void HandleJumping()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true && !anim.GetCurrentAnimatorStateInfo(0).IsName("fall"))
         {
-            isGrounded = true;
-            anim.SetBool("isGrounded", true);
+            OnJump();
+            canDoubleJump = true;
+ 
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump)
+        {
+            OnJump();
+            canDoubleJump = false;
+        }
+    }
+    public void playerAnim()
+    {
+        playerStates states;
+
+        if (Mathf.Abs(MoveH) > 0)
+        {
+            states = playerStates.Run;
         }
         else
         {
-            isGrounded = false;
-            anim.SetBool("isGrounded", false);
+            states = playerStates.Idle;
         }
+        if (rb.velocity.y > 0.1f)
+        {
+            states = playerStates.Jump;
+        }
+        else if (rb.velocity.y < -0.1f)
+        {
+            states = playerStates.Fall;
+        }
+        anim.SetInteger("state", (int)states);
+    }
+
+    private void CheckGround()
+    {
+        Collider2D collider = Physics2D.OverlapBox(checkPoint.position, checkBoxSize, 0,layerMask);
+        isGrounded = collider != null;
+        anim.SetBool("isGrounded", isGrounded);
     }
     private void OnDrawGizmos()
     {
@@ -135,6 +162,15 @@ public class PlayerMove : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
     }
+
+    private void OnJump()
+    {
+        rb.velocity = Vector2.up * jumpForce;
+        //播放跳跃动画
+        anim.SetTrigger("Jump");
+
+    }
+
     private void BetterJump()
     {
         if (rb.velocity.y < 0)
@@ -147,13 +183,6 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void OnJump()
-    {
-        rb.velocity = Vector2.up * jumpForce;
-        //播放跳跃动画
-        anim.SetTrigger("Jump");
-       
-    }
     private void OnDoubleJump()
     {
         rb.velocity = Vector2.up * jumpForce * 0.8f;
