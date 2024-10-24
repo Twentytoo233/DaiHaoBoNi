@@ -19,9 +19,14 @@ public class RightPanel : BasePanel
     protected override void Awake()
     {
         base.Awake();
-        AllEvent();
+        
     }
 
+    // Start is called before the first frame update
+    private void Start()
+    {
+        AllEvent();
+    }
     private void AllEvent()
     {
         GetControl<Button>("StartSaveBtn").onClick.AddListener(() =>
@@ -29,17 +34,27 @@ public class RightPanel : BasePanel
             Debug.Log("从存档开始游戏");
             //跳转到存档处
         });
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        GetControl<Button>("DeleteArchive").onClick.AddListener(() =>
+        {
+            //弹出提示框
+            UIMgr.Instance.ShowPanel<DeletePrompt>();
+        });
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GetControl<Button>("ReturnSelection").onClick.AddListener(() =>
+        {
+            //返回上一个面板
+            UIMgr.Instance.HidePanel<RightPanel>();
+            HideMe();
+            UIMgr.Instance.ShowPanel<Start_SLPanel>();
+        });
+
+        GetControl<Button>("ReturnTitle").onClick.AddListener(() =>
+        {
+            //返回标题
+            UIMgr.Instance.HidePanel<RightPanel>();
+            HideMe();
+            UIMgr.Instance.ShowPanel<StartPanel>();
+        });
     }
 }

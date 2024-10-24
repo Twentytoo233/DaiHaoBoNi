@@ -1,15 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Start_SLPanel : BasePanel
+public class DeletePrompt : BasePanel
 {
-    
     public override void HideMe()
     {
-
         gameObject.SetActive(false);
     }
 
@@ -17,29 +15,31 @@ public class Start_SLPanel : BasePanel
     {
         gameObject.SetActive(true);
     }
+
     protected override void Awake()
     {
-        this.enabled = true;
         base.Awake();
+
     }
 
+    // Start is called before the first frame update
     private void Start()
     {
         AllEvent();
     }
 
-    /// <summary>
-    /// 添加控件监听事件
-    /// </summary>
     private void AllEvent()
     {
-        GetControl<Button>("SLButton").onClick.AddListener(() =>
+        //是 删除存档
+        GetControl<Button>("OKButton").onClick.AddListener(() =>
         {
-            Debug.Log("选中");
-            UIMgr.Instance.ShowPanel<RightPanel>();
-
+            Debug.Log("删除存档");
         });
-
-        
+        //否 返回上一个面板
+        GetControl<Button>("NoButton").onClick.AddListener(() =>
+        {
+            UIMgr.Instance.HidePanel<DeletePrompt>();
+            HideMe();
+        });
     }
 }

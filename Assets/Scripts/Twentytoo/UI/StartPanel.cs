@@ -27,10 +27,7 @@ public class StartPanel : BasePanel
         UIMgr.Instance.ShowPanel<StartPanel>();
         AllEvent();
     }
-    private void Update()
-    {
-        
-    }
+    
     private void AllEvent()
     {
         GetControl<Button>("StartButton").onClick.AddListener(() =>
