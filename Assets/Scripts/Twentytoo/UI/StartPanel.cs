@@ -16,15 +16,20 @@ public class StartPanel : BasePanel
         gameObject.SetActive(true);
     }
 
+    protected override void Awake()
+    {
+        this.enabled = true;
+        base.Awake();
+    }
 
     private void Start()
     {
         UIMgr.Instance.ShowPanel<StartPanel>();
-        //AllEvent();
+        AllEvent();
     }
     private void Update()
     {
-        AllEvent();
+        
     }
     private void AllEvent()
     {

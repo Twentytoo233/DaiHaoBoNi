@@ -19,13 +19,13 @@ public class Start_SLPanel : BasePanel
     }
     protected override void Awake()
     {
+        this.enabled = true;
         base.Awake();
-        AllEvent();
     }
 
     private void Start()
     {
-        
+        AllEvent();
     }
 
     /// <summary>

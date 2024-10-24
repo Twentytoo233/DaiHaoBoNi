@@ -97,6 +97,7 @@ public abstract class BasePanel : MonoBehaviour
 
     private void FindChildrenControl<T>() where T : UIBehaviour
     {
+        Debug.Log(gameObject.name);
         T[] controls = GetComponentsInChildren<T>();
         for (int i = 0; i < controls.Length; i++)
         {

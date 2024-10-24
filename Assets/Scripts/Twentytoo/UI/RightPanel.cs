@@ -24,9 +24,10 @@ public class RightPanel : BasePanel
 
     private void AllEvent()
     {
-        GetControl<Button>("Button").onClick.AddListener(() =>
+        GetControl<Button>("StartSaveBtn").onClick.AddListener(() =>
         {
-            Debug.Log("点击");
+            Debug.Log("从存档开始游戏");
+            //跳转到存档处
         });
     }
 
