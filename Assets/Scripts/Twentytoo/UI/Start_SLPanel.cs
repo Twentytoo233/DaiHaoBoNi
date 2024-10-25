@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Start_SLPanel : BasePanel
 {
-    public Button slInfoBtn;
+    
     public override void HideMe()
     {
+
         gameObject.SetActive(false);
     }
 
@@ -15,23 +17,29 @@ public class Start_SLPanel : BasePanel
     {
         gameObject.SetActive(true);
     }
-
-    // Start is called before the first frame update
-    void Start()
+    protected override void Awake()
     {
-        slInfoBtn = GetControl<Button>("SLInfoBtn");
+        this.enabled = true;
+        base.Awake();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        //存档页的开始按钮
-        //选中存档 点击开始游戏
-        GetControl<Button>("SLInfoBtn").onClick.AddListener(() =>
+        AllEvent();
+    }
+
+    /// <summary>
+    /// 添加控件监听事件
+    /// </summary>
+    private void AllEvent()
+    {
+        GetControl<Button>("SLButton").onClick.AddListener(() =>
         {
-            //选中 颜色变化
-            slInfoBtn.GetComponent<Image>().color = Color.blue;
-            
+            Debug.Log("选中");
+            UIMgr.Instance.ShowPanel<RightPanel>();
+
         });
+
+        
     }
 }
