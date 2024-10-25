@@ -10,19 +10,19 @@ using UnityEngine.UI;
  */
 public class MemoryPanel : BasePanel
 {
-    
-    //public override void HideMe()
-    //{
-    //    gameObject.SetActive(false);
-    //}
 
-    //public override void ShowMe()
-    //{
-    //    gameObject.SetActive(true);
-    //}
+    public override void HideMe()
+    {
+        gameObject.SetActive(false);
+    }
 
-    
-    
+    public override void ShowMe()
+    {
+        gameObject.SetActive(true);
+    }
+
+
+
 
     // Start is called before the first frame update
     void Start()

@@ -12,6 +12,8 @@ public abstract class BasePanel : MonoBehaviour
     /// 用于存储所有要用到的UI控件 用里氏替换原则 UIBehaviour装载
     /// </summary>
     protected Dictionary<string,UIBehaviour> controlDic = new Dictionary<string,UIBehaviour>();
+    
+
 
     /// <summary>
     /// 控件默认名字 不被查找也不被代码使用
@@ -46,26 +48,21 @@ public abstract class BasePanel : MonoBehaviour
         FindChildrenControl<Text>();
         FindChildrenControl<TextMeshPro>();
         FindChildrenControl<Image>();
+        FindChildrenControl<TMP_Text>();
     }
 
     /// <summary>
     /// 面板显示时调用的函数
     /// </summary>
-    //public abstract void ShowMe();
-    public virtual void ShowMe()
-    {
-        gameObject.SetActive(true);
-    }
+    public abstract void ShowMe();
+    
 
 
     /// <summary>
     /// 面板隐藏时调用的函数
     /// </summary>
-    //public abstract void HideMe();
-    public virtual void HideMe()
-    {
-        gameObject.SetActive(false);
-    }
+    public abstract void HideMe();
+
 
 
     /// <summary>
@@ -74,22 +71,24 @@ public abstract class BasePanel : MonoBehaviour
     /// <typeparam name="T">组件类型</typeparam>
     /// <param name="name">组件名字</param>
     /// <returns></returns>
-    public T GetControl<T>(string name)where T : UIBehaviour
+
+    public T GetControl<T>(string name) where T : UIBehaviour
     {
         if (controlDic.ContainsKey(name))
         {
             T control = controlDic[name] as T;
-            if(control == null)
-            {
-                Debug.LogError($"不存在对应名字{name},类型为{typeof(T)}的组件");
-            }
-            return controlDic[name] as T;
+            if (control == null)
+                Debug.LogError($"不存在对应名字{name}类型为{typeof(T)}的组件");
+            return control;
         }
-        else{
+        else
+        {
             Debug.LogError($"不存在对应名字{name}的组件");
             return null;
         }
     }
+
+
 
     protected virtual void ClickBtn(string btnName) { }
 
@@ -99,6 +98,7 @@ public abstract class BasePanel : MonoBehaviour
 
     private void FindChildrenControl<T>() where T : UIBehaviour
     {
+        Debug.Log(gameObject.name);
         T[] controls = GetComponentsInChildren<T>();
         for (int i = 0; i < controls.Length; i++)
         {

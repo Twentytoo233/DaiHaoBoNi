@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ClimbLadder : MonoBehaviour
 {
-    private float vertical;
-    private float speed = 3f;
-    private bool isLadder;
+    private float vertical; //垂直输入
+    private float speed = 3f; //爬梯子的速度
+    private bool isLadder; 
     private bool isClimbing;
 
     private Animator anim;
@@ -61,6 +61,7 @@ public class ClimbLadder : MonoBehaviour
         {
             isLadder = false;
             isClimbing = false;
+            anim.SetBool("Climbing", false);
             //播放Idle动画
             anim.Play("Idle");
         }

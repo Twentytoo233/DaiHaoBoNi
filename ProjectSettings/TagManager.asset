@@ -4,20 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - HeavyObject
   - FallTrigger
+  - Enemy
+  - Rock
+  - Ladder
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Items
+  - 
   - Water
   - UI
-  - Player
   - Platform
-  - Enemy
-  - Tilemap
+  - 
+  - 
+  - 
   - 
   - 
   - 

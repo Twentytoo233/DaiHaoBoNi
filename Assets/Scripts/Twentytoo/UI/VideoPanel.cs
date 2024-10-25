@@ -17,6 +17,17 @@ public class VideoPanel : BasePanel
     private bool IsPlay = true;
 
     private double videoTime, currentTime;
+
+    public override void HideMe()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public override void ShowMe()
+    {
+        gameObject.SetActive(true);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
