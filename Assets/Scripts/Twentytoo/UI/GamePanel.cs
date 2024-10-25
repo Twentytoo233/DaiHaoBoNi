@@ -54,4 +54,5 @@ public class GamePanel : BasePanel
         Debug.Log("”Œœ∑‘›Õ£");
         UIMgr.Instance.ShowPanel<PausePanel>();
     }
+
 }
