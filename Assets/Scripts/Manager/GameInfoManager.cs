@@ -35,7 +35,7 @@ public class PlayerInfo
         spawnPoint = new Vector2(-4.2f, 0.8f);
         maxEnergy = 3;
         energy = maxEnergy;
-        playerObj = GameObject.Instantiate(ResourcesMgr.Instance.Load<GameObject>("Prefabs/Player"),spawnPoint,Quaternion.identity);
+        playerObj = GameObject.Instantiate(ResourcesMgr.Instance.Load<GameObject>("Prefabs/Ricky/Player"),spawnPoint,Quaternion.identity);
         GameObject.DontDestroyOnLoad(playerObj);
     }
     public void DeadAction()

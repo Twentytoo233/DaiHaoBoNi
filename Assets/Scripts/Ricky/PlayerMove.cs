@@ -50,6 +50,8 @@ public class PlayerMove : MonoBehaviour
         anim = GetComponent<Animator>();
         Physics2D.queriesStartInColliders = false;
         canDoubleJump = false;
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void Update()
