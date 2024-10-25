@@ -26,5 +26,7 @@ public class DialogTrigger : MonoBehaviour
     {
         //关闭提示
         UIMgr.Instance.HidePanel<DialohueTip>();
+        //关闭对话框
+        UIMgr.Instance.HidePanel<DialoguePanel>();
     }
 }
