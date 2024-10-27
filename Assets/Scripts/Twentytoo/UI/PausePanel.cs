@@ -40,16 +40,20 @@ public class PausePanel : BasePanel
         GetControl<Button>("Continue").onClick.AddListener(() =>
         {
             Debug.Log("继续游戏");
+            Time.timeScale = 1;//继续
             UIMgr.Instance.HidePanel<PausePanel>();
             HideMe();
             //显示倒计时
-            UIMgr.Instance.ShowPanel<CountDown>();
+            //UIMgr.Instance.ShowPanel<CountDown>();
         });
 
         GetControl<Button>("Restart").onClick.AddListener(() =>
         {
             //重新加载场景
             SceneMgr.Instance.LoadSceneAsyn(sceneName);
+            //关闭面板
+            UIMgr.Instance.HidePanel<PausePanel>();
+            HideMe();
         });
 
         GetControl<Button>("SL").onClick.AddListener(() =>
