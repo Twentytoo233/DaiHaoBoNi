@@ -962,7 +962,7 @@ GameObject:
   - component: {fileID: 270409134}
   - component: {fileID: 270409136}
   - component: {fileID: 270409137}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Ground_Basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1948,7 +1948,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1269028080799786813, guid: 6af54042ef967b040a3edee3dfaaf7b6, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 128
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 3697723657098911562, guid: 6af54042ef967b040a3edee3dfaaf7b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2020,7 +2020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8454355972034751952, guid: 6af54042ef967b040a3edee3dfaaf7b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.74
+      value: -4.42
       objectReference: {fileID: 0}
     - target: {fileID: 8454355972034751952, guid: 6af54042ef967b040a3edee3dfaaf7b6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2387,7 +2387,7 @@ GameObject:
   - component: {fileID: 623165068}
   - component: {fileID: 623165067}
   - component: {fileID: 623165070}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_Basic (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3290,7 +3290,7 @@ GameObject:
   - component: {fileID: 772620871}
   - component: {fileID: 772620870}
   - component: {fileID: 772620872}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground__Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
