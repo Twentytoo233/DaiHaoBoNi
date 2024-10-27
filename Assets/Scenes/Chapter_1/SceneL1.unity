@@ -7037,7 +7037,7 @@ GameObject:
   - component: {fileID: 634371208}
   - component: {fileID: 634371207}
   - component: {fileID: 634371210}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: diban_xiuxishi (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13283,7 +13283,7 @@ GameObject:
   - component: {fileID: 1189657122}
   - component: {fileID: 1189657121}
   - component: {fileID: 1189657124}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: diban_xiuxishi (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16418,7 +16418,7 @@ GameObject:
   - component: {fileID: 1475557441}
   - component: {fileID: 1475557440}
   - component: {fileID: 1475557443}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: diban_xiuxishi (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19746,7 +19746,7 @@ GameObject:
   - component: {fileID: 1694264308}
   - component: {fileID: 1694264307}
   - component: {fileID: 1694264310}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: diban_xiuxishi (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
