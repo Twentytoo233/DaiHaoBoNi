@@ -27,6 +27,7 @@ public class GamePanel : BasePanel
     private void Start()
     {
         UIMgr.Instance.ShowPanel<GamePanel>();
+
         AllEvent();
     }
 
@@ -54,5 +55,4 @@ public class GamePanel : BasePanel
         Debug.Log("”Œœ∑‘›Õ£");
         UIMgr.Instance.ShowPanel<PausePanel>();
     }
-
 }
