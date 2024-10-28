@@ -208,4 +208,12 @@ public class MusicMgr : BaseManager<MusicMgr>
         //清空音效列表
         soundList.Clear();
     }
+
+    public void SetBKMusicLoop(bool isLoop)
+    {
+        if (bkMusic!=null)
+        {
+            bkMusic.loop = isLoop;
+        }
+    }
 }

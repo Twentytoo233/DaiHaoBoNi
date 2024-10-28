@@ -43,6 +43,8 @@ public class PausePanel : BasePanel
             Time.timeScale = 1;//继续
             UIMgr.Instance.HidePanel<PausePanel>();
             HideMe();
+            //显示游戏面板
+            UIMgr.Instance.ShowPanel<GamePanel>();
             //显示倒计时
             //UIMgr.Instance.ShowPanel<CountDown>();
         });

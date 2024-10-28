@@ -3225,11 +3225,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7072688067449979298, guid: 6af54042ef967b040a3edee3dfaaf7b6, type: 3}
   m_PrefabInstance: {fileID: 394395713}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &702779293 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1142714727452834619, guid: 6af54042ef967b040a3edee3dfaaf7b6, type: 3}
-  m_PrefabInstance: {fileID: 394395713}
-  m_PrefabAsset: {fileID: 0}
 --- !u!320 &702779294
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -4520,6 +4515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177684248}
   - component: {fileID: 1177684247}
+  - component: {fileID: 1177684249}
   m_Layer: 0
   m_Name: BearyUnder_mus_Scene0
   m_TagString: Untagged
@@ -4638,6 +4634,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177684249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177684246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ed9ee73bd6a9849bbc0dfe2c64f312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1190510342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 465685391038407922, guid: d92e3103557680649a480936694800c5, type: 3}
@@ -7642,12 +7650,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].key
+      value: 
+      objectReference: {fileID: 3664253986336108413, guid: 73a2c5b50f7008241bf107f1faaf6342, type: 2}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].key
       value: 
-      objectReference: {fileID: 3664253986336108413, guid: 73a2c5b50f7008241bf107f1faaf6342, type: 2}
+      objectReference: {fileID: 5024168625879137286, guid: 73a2c5b50f7008241bf107f1faaf6342, type: 2}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].key
       value: 
@@ -7655,11 +7667,11 @@ PrefabInstance:
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
-      objectReference: {fileID: 702779293}
+      objectReference: {fileID: 408965546}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].value
       value: 
-      objectReference: {fileID: 408965546}
+      objectReference: {fileID: 1734281306}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 

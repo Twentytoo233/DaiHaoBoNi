@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6226886393698039056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8944813753281791787}
   - component: {fileID: 1269028080799786813}
   - component: {fileID: 3449150770990478918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -217,12 +217,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 4
-  jumpForce: 10
+  jumpForce: 5
   isGrounded: 0
   checkPoint: {fileID: 6226886393698039056}
   layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 64
   checkBoxSize: {x: 1, y: 0.09}
   fallFactor: 2
   shortJumpFactor: 0
