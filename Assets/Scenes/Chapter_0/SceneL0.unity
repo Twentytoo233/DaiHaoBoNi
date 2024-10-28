@@ -3225,11 +3225,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7072688067449979298, guid: 6af54042ef967b040a3edee3dfaaf7b6, type: 3}
   m_PrefabInstance: {fileID: 394395713}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &702779293 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1142714727452834619, guid: 6af54042ef967b040a3edee3dfaaf7b6, type: 3}
-  m_PrefabInstance: {fileID: 394395713}
-  m_PrefabAsset: {fileID: 0}
 --- !u!320 &702779294
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -7643,12 +7638,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].key
+      value: 
+      objectReference: {fileID: 3664253986336108413, guid: 73a2c5b50f7008241bf107f1faaf6342, type: 2}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].key
       value: 
-      objectReference: {fileID: 3664253986336108413, guid: 73a2c5b50f7008241bf107f1faaf6342, type: 2}
+      objectReference: {fileID: 5024168625879137286, guid: 73a2c5b50f7008241bf107f1faaf6342, type: 2}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].key
       value: 
@@ -7656,11 +7655,11 @@ PrefabInstance:
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
-      objectReference: {fileID: 702779293}
+      objectReference: {fileID: 408965546}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].value
       value: 
-      objectReference: {fileID: 408965546}
+      objectReference: {fileID: 1734281306}
     - target: {fileID: 8329094347651741836, guid: 0937c8423e710bf489f00094f722c5bc, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 
